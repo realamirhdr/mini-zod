@@ -1,7 +1,7 @@
 import { Schema } from "../schema.js";
 
 export class ArraySchema<T> extends Schema<Array<T>> {
-    constructor(private readonly elements: Schema<T>) {
+    constructor(private readonly element: Schema<T>) {
         super();
     }
     parse(input: unknown): Array<T> {
@@ -11,7 +11,7 @@ export class ArraySchema<T> extends Schema<Array<T>> {
 
         return input.map((item, i) => {
             try {
-                return this.elements.parse(item)
+                return this.element.parse(item)
             } catch (err) {
                 throw new Error(`At index ${i}: ${(err as Error).message}`)
             }
