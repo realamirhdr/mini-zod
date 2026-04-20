@@ -13,3 +13,11 @@ export const literal = <T extends string | number | boolean>(value: T) => new Li
 export const array = <T>(elements: Schema<T>) => new ArraySchema(elements);
 export const union = <T extends Schema<unknown>[]>(elements: T) => new UnionSchema(elements);
 
+
+
+type t = {
+    age: number,
+    name: string
+}
+
+type q = t[keyof t]

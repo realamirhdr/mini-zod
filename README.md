@@ -2,6 +2,8 @@
 
 A minimal schema validation library inspired by [Zod](https://zod.dev), built with TypeScript.
 
+> This project is a learning exercise to explore and practice complex TypeScript types. I add a new schema type to it each time I learn a new TypeScript type concept.
+
 ## Installation
 
 ```bash
